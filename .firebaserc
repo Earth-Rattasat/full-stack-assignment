@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "band-assignment"
-  }
+    "default": "band-assignment",
+    "dev": "band-assignment"
+  },
+  "targets": {}
 }
