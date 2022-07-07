@@ -1,9 +1,11 @@
+import { API_URL } from './../../constant';
 import cuid from 'cuid'
 import { useState } from 'react'
 import { randomDate } from '../utils/randomDate'
 import { faker } from '@faker-js/faker'
+import axios from 'axios'
 
-interface UserProps {
+export interface UserProps {
   id: string
   username: string
   password: string
@@ -14,7 +16,7 @@ interface UserProps {
 export const useUserGenerator = () => {
   const [userinfo, setUserinfo] = useState<UserProps | null>(null)
 
-  const generate = () => {
+  const generate = async () => {
     const user: UserProps = {
       id: `user${cuid()}`,
       username: faker.internet.userName(),
@@ -25,6 +27,7 @@ export const useUserGenerator = () => {
       joined_date: randomDate(new Date(2019, 0, 1), new Date()),
     }
 
+    await axios.post(`${API_URL}/user`, user)
     setUserinfo(user)
   }
 
