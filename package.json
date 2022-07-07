@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "prebuild": "yarn",
     "preview": "vite preview",
-    "build:dev": "env-cmd -f .env yarn build && firebase deploy -P dev"
+    "build:dev": "env-cmd -f .env yarn build"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
