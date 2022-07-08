@@ -1,4 +1,4 @@
-import { API_URL } from './../../constant';
+import { API_URL } from '../constant';
 import cuid from 'cuid'
 import { useState } from 'react'
 import { randomDate } from '../utils/randomDate'
